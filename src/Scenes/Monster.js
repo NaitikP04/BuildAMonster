@@ -56,19 +56,11 @@ class Monster extends Phaser.Scene {
         my.sprite.righteye = this.add.sprite(this.bodyX+35, this.bodyY-20, "monsterParts", "eye_psycho_light.png");
         my.sprite.righteye.setScale(0.8);
 
-
-        /* When 'S' is pressed, the monster should smile, and keep smiling. 
-        When 'F' is pressed, the monster should show its fangs, and keep showing fangs.
-        Only one mouth expression should be visible at a time. That is, either a smile or 
-        fangs should be visible, but not both at the same time. */
-
-        // Initially hide both smile and fangs
         my.sprite.smile = this.add.sprite(this.bodyX, this.bodyY + 40, "monsterParts", "mouthH.png");
         my.sprite.smile.visible = true;
         my.sprite.fangs = this.add.sprite(this.bodyX, this.bodyY + 40, "monsterParts", "mouthB.png");
         my.sprite.fangs.visible = false;
 
-        // Input handling for showing smile or fangs
         this.input.keyboard.on("keydown", function(event) {
             console.log(event.code);
             if (event.code === "KeyS") {
